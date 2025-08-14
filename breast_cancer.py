@@ -2,8 +2,14 @@ import numpy as np
 import pickle
 import streamlit as st
 
+import os
 
-loaded_model = pickle.load(open(r"trained_model.sav", 'rb'))
+# Make path relative to this script
+model_path = os.path.join(os.path.dirname(__file__), "trained_model.sav")
+
+# Open safely with context manager
+with open(model_path, 'rb') as f:
+    loaded_model = pickle.load(f)
 
 def breast_cancer_predict(input_data):
     
