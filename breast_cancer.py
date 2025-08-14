@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 
 
-loaded_model = pickle.load(open(r"D:\breast_cancer_predict\trained_model.sav", 'rb'))
+loaded_model = pickle.load(open(r"trained_model.sav", 'rb'))
 
 def breast_cancer_predict(input_data):
     
